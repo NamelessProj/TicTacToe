@@ -22,7 +22,8 @@ public class Main {
                 continue;
             }
             board[move] = currentPlayer;
-            if (hasWon(board, currentPlayer)) {
+            // Check if the current player has won the game after the first player has played at lest 3 squares.
+            if (numberOfSquaresPlayed >= 5 && hasWon(board, currentPlayer)) {
                 hasAWinner = true;
                 printBoard(board);
                 System.out.println("Player " + currentPlayer + " has won!");
